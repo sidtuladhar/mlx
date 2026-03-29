@@ -2903,11 +2903,7 @@ TEST_CASE("test pad symmetric") {
   auto x_small = array({1.0f, 2.0f, 3.0f});
   auto padded_large = pad(x_small, {{5, 5}}, array(0), "symmetric");
   auto expected_large = array(
-      {3.0f,
-       2.0f,
-       1.0f,
-       1.0f,
-       2.0f,
+      {2.0f,
        3.0f,
        3.0f,
        2.0f,
@@ -2915,7 +2911,11 @@ TEST_CASE("test pad symmetric") {
        1.0f,
        2.0f,
        3.0f,
-       3.0f});
+       3.0f,
+       2.0f,
+       1.0f,
+       1.0f,
+       2.0f});
   CHECK(array_equal(padded_large, expected_large).item<bool>());
 }
 
