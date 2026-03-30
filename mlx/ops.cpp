@@ -1521,7 +1521,7 @@ array symmetric_pad(
       array forward = slice(padded, starts, stops, s);
 
       starts[axis] = low_pad_size[axis] + n - 1;
-      stops[axis] = (padded.shape(axis) + 1);
+      stops[axis] = low_pad_size[axis] - 1;
       array backward = slice(padded, starts, stops, strides, s);
 
       // build bounce pattern cycle
